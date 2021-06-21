@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
             android:fontFamily="@font/aquatico_regular"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
