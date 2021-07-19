@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.view.isVisible
 import com.noemi.android.popup.R
-import com.noemi.android.popup.adapter.Pixabay
+import com.noemi.android.popup.adapter.PixabayListener
 import com.noemi.android.popup.adapter.PixabayAdapter
 import com.noemi.android.popup.app.App
 import com.noemi.android.popup.util.showDialogFragment
@@ -19,10 +19,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var viewModel: PixabayViewModel
 
     private val adapter: PixabayAdapter by lazy {
-        PixabayAdapter(pixabay)
+        PixabayAdapter(pixabayListener)
     }
 
-    private val pixabay: Pixabay = {
+    private val pixabayListener: PixabayListener = {
         showDialogFragment(PixabayFragment().apply {
             isCancelable = true
             arguments = Bundle().apply {
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpRV() {
-        rvPicsum.adapter = adapter
+        rvArtworks.adapter = adapter
     }
 
     private fun initObserver() {
